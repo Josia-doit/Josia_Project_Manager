@@ -1,0 +1,4 @@
+# 适配Python 3.13的稳定版依赖
+PyQt5>=5.15.11
+QScintilla>=2.14.1
+pyinstaller>=6.10.0
