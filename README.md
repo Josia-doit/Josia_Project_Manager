@@ -93,10 +93,10 @@ Josia Project Manager 旨在提供一个**轻量、简洁、可视化**的项目
   ]
 }
 ```
-<img width="1402" height="912" alt="1" src="https://github.com/user-attachments/assets/150fd49b-dc3e-457b-8719-5015b0a0d719" />
-<img width="1402" height="912" alt="2" src="https://github.com/user-attachments/assets/d7a3f9c4-6388-4a29-a405-933ed8bf3f85" />
+
 ### Step 2：执行批量写入
 粘贴 → 执行，程序将自动创建完整目录结构。
+<img width="1402" height="912" alt="1" src="https://github.com/user-attachments/assets/150fd49b-dc3e-457b-8719-5015b0a0d719" />
 
 ### Step 3：生成的文件结构
 ```
@@ -110,6 +110,7 @@ Josia Project Manager 旨在提供一个**轻量、简洁、可视化**的项目
 │   └── style.css        # 前端样式文件
 └── README.md            # 项目说明文档
 ```
+<img width="1402" height="912" alt="2" src="https://github.com/user-attachments/assets/d7a3f9c4-6388-4a29-a405-933ed8bf3f85" />
 
 ## 📁 生成文件说明
 使用测试指令后，会自动生成以下文件：
