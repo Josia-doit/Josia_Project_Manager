@@ -69,11 +69,33 @@ Josia Project Manager 旨在提供一个**轻量、简洁、可视化**的项目
 |批量导出|`Ctrl + E`|将当前项目文件批量导出为 JSON 格式|
 |打包 EXE|`Ctrl + B`|一键打包当前项目为可执行文件，自动清理临时文件|
 |批量写入|`Ctrl + G`|粘贴 JSON 指令，一键生成项目文件与目录|
-## 📖 快速使用指南
 
+## 📢 重要说明
+本软件 **基于 Python 3.13 (64位)开发**
+所有代码、依赖、打包功能均适配此环境。
+
+## 📖 快速使用指南（Windows）
 ### 1. 启动程序
 
-运行编译后的 `exe` 文件，进入主界面。（注：当前版本已修复启动报错问题，可正常启动）
+#### 方式 1：直接运行 EXE（推荐普通用户）
+1. 下载 `Josia_Project_Manager.exe`
+2. 如需使用 **打包 EXE 功能**，请先运行：**install_requirements.bat**
+3. 安装完成后，即可正常打开 EXE 使用全部功能
+
+#### 方式 2：源码运行（开发者）
+1. 克隆或下载本项目
+2. 双击运行：**install_requirements.bat**
+3. 运行：**python main.py**
+
+```
+🛠️ install_requirements.bat 作用
+全自动一键部署完整环境：
+1. 自动下载 Python 3.13.1 (64位)
+2. 自动静默安装并配置环境变量
+3. 自动安装项目所有依赖（从 requirements.txt）
+4. 自动配置国内加速源，速度更快
+（整个过程无需用户任何操作）
+```
 
 ### 2. 设定项目目录
 
@@ -116,6 +138,18 @@ Josia Project Manager 旨在提供一个**轻量、简洁、可视化**的项目
 
     - 打包完成后，程序会自动清理 build、dist 临时目录及 .spec 配置文件，无需手动删除
 
+## ⚠️ 注意事项
+1. **必须使用 Python 3.13 (64位)**，其他版本不保证兼容
+2. 首次使用打包 EXE 功能前，必须运行 install_requirements.bat
+3. 脚本会自动安装 Python 3.13 及所需依赖环境，无需手动下载
+4. 仅支持 64 位 Windows 系统
+
+## 📦 项目依赖
+所有依赖已写入 `requirements.txt`，由脚本自动安装：
+- PyQt5 >= 5.15.11
+- QScintilla >= 2.14.1
+- PyInstaller >= 6.10.0
+
 ## 🧪 标准测试流程
 
 ### Step 1：复制测试 JSON 指令
@@ -151,8 +185,6 @@ Josia Project Manager 旨在提供一个**轻量、简洁、可视化**的项目
 
 粘贴 → 执行，程序将自动创建完整目录结构。
 
-
-
 ### Step 3：生成的文件结构
 
 ```bash
@@ -166,21 +198,6 @@ Josia Project Manager 旨在提供一个**轻量、简洁、可视化**的项目
 │   └── style.css        # 前端样式文件
 └── README.md            # 项目说明文档
 ```
-
-
-## 📁 生成文件说明
-
-使用测试指令后，会自动生成以下文件：
-
-1. **main.py**：完整可运行的 PyQt5 窗口程序
-
-2. **config/settings.py**：项目配置（DEBUG、版本、作者）
-
-3. **utils/tools.py**：通用工具方法
-
-4. **static/style.css**：基础 CSS 样式表
-
-5. **README.md**：项目说明文档
 
 ## 💡 适用场景
 
@@ -202,15 +219,16 @@ Josia Project Manager 旨在提供一个**轻量、简洁、可视化**的项目
 
 ```bash
 Josia_Project_Manager/
-├── icons/                  # 程序图标资源（必需）
-├── README.md               # 项目说明文档（当前文件）
-├── CHANGELOG.md            # 版本更新日志（新增）
-├── requirements.txt        # 依赖环境清单（必需）
-├── main.py                 # 主程序入口（必需）
-├── file_tree.py            # 左侧文件树模块（必需）
-├── code_editor.py          # 右侧代码编辑器模块（必需）
-├── help_left.md            # 帮助文档内容（必需）
-└── help_right.md           # AI 指令模板（必需）
+├── icons/                    # 程序图标资源（必需）
+├── README.md                 # 项目说明文档（当前文件）
+├── CHANGELOG.md              # 版本更新日志（新增）
+├── requirements.txt          # 依赖环境清单（必需）
+├── install_requirements.bat  # 一键环境部署脚本（可选）
+├── main.py                   # 主程序入口（必需）
+├── file_tree.py              # 左侧文件树模块（必需）
+├── code_editor.py            # 右侧代码编辑器模块（必需）
+├── help_left.md              # 帮助文档内容（必需）
+└── help_right.md             # AI 指令模板（必需）
 ```
 
 **说明**：已删除废弃的structure_parser.py 文件，此文件为早期版本遗留，当前版本已无需依赖，如曾下载旧版文件，删除后不影响任何功能，且能提升程序运行效率。
